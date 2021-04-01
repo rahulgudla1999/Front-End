@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+       $(document).ready(function(){
+        $("#login").click(function(){
+            if($("#username").val() == ""){
+                $(".uname").addClass("error");
+                
+                
+                $("#username").css("border-bottom","2px solid red");
+                $(".error-msg").css("display","flex");
+            }
+            if($("#password").val() == ""){
+                $(".pass").addClass("error");
+                $("#password").css("border-bottom","2px solid red");
+                $(".error-msg").css("display","flex");
+            }
+            if($("#username").val()=="rahul" && $("#password").val()=="rahul"){
+                alert("Login Successfull");
+                window.location.reload();
+            }
+        });
+        $(".input").click(function(){
+            $(".input").removeClass("error");
+        });
+        });
+    </script>
+</head>
+<body>
+    <div class="home">
+        <nav class="navbar">
+            <img class="logo" src="logo.png">
+             <ul>
+                 <li><a class="active" href="index.html">Home</a></li>
+                 <li><a href="#">About</a></li>
+                 <li><a href="#">Services</a></li>
+                 <li><a href="#">Contact</a></li>
+                 <li><a href="login.html">Login</a></li>
+             </ul>
+        </nav>
+        <div class="contactus">
+        <div class="content">
+            <p class="p1">Login<p><br>
+                <p class="error-msg">Username/password is incorect</p>
+            <form>
+            <label>Username</label>
+            <input type="text" class="input uname" id="username" placeholder="Enter Username" ><br>
+            <label>Password</label>
+            <input type="password" class="input pass" id="password" placeholder="Enter Password" ><br>
+            <input type="button" value="Login" class="login" id="login">
+            <a href="#">Forgot Password?</a><br>
+            <a href="#">Don't have an account?</a>
+            </div>
+            </form>
+        </div>
+        </div>
+    
+</body>
+
+</html>
